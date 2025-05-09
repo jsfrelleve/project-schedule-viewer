@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import ProjectHeader from "../components/ProjectHeader";
 import Toolbar from "../components/Toolbar";
 import GanttView from "../components/GanttView";
-import ScheduleHealth from "../components/ScheduleHealth";
 import RelationshipsTab from "../components/RelationshipsTab";
+import CollapsibleScheduleHealth from "../components/CollapsibleScheduleHealth";
+import ChatButton from "../components/Chat/ChatButton";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("Relationships");
@@ -72,10 +73,8 @@ const Index = () => {
               <GanttView />
             </div>
 
-            {/* Health metrics panel */}
-            <div className="w-80 bg-white border-l border-gray-200">
-              <ScheduleHealth />
-            </div>
+            {/* Health metrics panel - Now collapsible */}
+            <CollapsibleScheduleHealth />
           </div>
 
           {/* Bottom tab area */}
@@ -102,6 +101,9 @@ const Index = () => {
           </div>
         </div>
       </div>
+      
+      {/* Floating chat button */}
+      <ChatButton />
     </div>
   );
 };
